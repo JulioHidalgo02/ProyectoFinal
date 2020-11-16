@@ -12,58 +12,82 @@ public class ParquesNacionales {
  }// Fin Constructor ParquesNacionales
  
  public void Menu(){
-     int op = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir \n 1- Parques Nacional Manuel Antonio \n 2- Parque Nacional Corcovado \n 3- Parque Nacional Tortuguero \n 4- Parque Nacional Cahuita \n 5- Salir" ));
-     int Seleccion;
+     
+     int ope;
         do{
-            
-        switch(op){
+            ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir \n 1- Parques Nacional Manuel Antonio \n 2- Parque Nacional Corcovado \n 3- Parque Nacional Tortuguero \n 4- Parque Nacional Cahuita \n 5- Reporte \n 0- Salir" ));
+         int Seleccion;   
+        switch(ope){
             case 1:
-                Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Manuel Antonio es de 1500 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 "));
-                if(Seleccion == 1){
-                    Comprar();
-                }else if (Seleccion == 2){
+                int seleccion;
+                do{
+                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Manuel Antonio es de 1500 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0 "));
+                    switch(Seleccion){
+                        case 1:
+                          Comprar();
+                    break;
+                        case 2:
+                            Reservar();
+                            break;
+                    }
                     
-                }else{
                     
-                }
-                
-                break;
+                }while(Seleccion != 0);
+               break;
                 
             case 2:
-                Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Manuel Antonio es de 1500 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 "));
-                if(Seleccion == 1){
-                    Comprar();
-                }else if (Seleccion == 2){
+                
+               do{
+                   Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Corcovado es de 2000 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0"));
+                    switch(Seleccion){
+                        case 1:
+                          Comprar();
+                    break;
+                        case 2:
+                            Reservar();
+                            break;
+                    }
                     
-                }else{
-                    
-                }
+                }while(Seleccion != 0);
                 
                 break;
                 
             case 3:
-                Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Manuel Antonio es de 1500 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 "));
-                if(Seleccion == 1){
-                    Comprar();
-                }else if (Seleccion == 2){
+                
+                do{
+                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Tortuguero es de 1800 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0"));
+                    switch(Seleccion){
+                        
+                        case 1:
+                          Comprar();
+                    break;
+                        case 2:
+                            Reservar();
+                            break;
+                    }
                     
-                }else{
-                    
-                }
+                }while(Seleccion != 0);
                 break;
                 
             case 4:
-                Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Manuel Antonio es de 1500 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 "));
-                if(Seleccion == 1){
-                    Comprar();
-                }else if (Seleccion == 2){
+                
+              do{
+                  Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Cahuita es de 2300 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0trthtr"));
+                    switch(Seleccion){
+                        case 1:
+                          Comprar();
+                    break;
+                        case 2:
+                            Reservar();
+                            break;
+                    }
                     
-                }else{
-                    
-                }
-             
+                }while(Seleccion != 0);
+            case 5:
+                Reporte();
+                break;
         }
-        }while (op != 5);
+        }while (ope != 0);
  }
  
  public void Comprar(){
@@ -86,12 +110,57 @@ public class ParquesNacionales {
                  espacios[i].correoElectronico = correoElectronico;
                  espacios[i].contrasenia = contrasenia;
                  espacios[i].estados = Estados.Vendido;
-                 JOptionPane.showMessageDialog(null, "Felicidades, usted adquirió" + cantTicketes );
-                 i = 10;
+                 JOptionPane.showMessageDialog(null, "Felicidades, usted adquirió " + cantTicketes + " Ticketes"  );
+                 i=10;
+             }else{
+                 
              } 
            }
             
-   }
+   } // Fin del metodo Comprar
+ 
+ public void Reservar(){
+     String nombre, apellidos, cedula, correoElectronico, contrasenia, numCelular;
+      int cantTicketes;
+      nombre = JOptionPane.showInputDialog("Digite su nombre");
+         apellidos = JOptionPane.showInputDialog("Digite sus apellidos");
+         cedula  = JOptionPane.showInputDialog("Digite su cedula");
+          numCelular = JOptionPane.showInputDialog("Digite su numero de celular");
+           correoElectronico = JOptionPane.showInputDialog("Digite su correo electronico");
+            contrasenia = JOptionPane.showInputDialog("Digite una contraseña");
+            cantTicketes = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de ticketes que desea reservar"));
+            
+           for (int i = 0; i < 10; i++){
+             if (espacios[i].estados == Estados.Disponible){
+                 espacios[i].nombre = nombre;
+                 espacios[i].apellidos = apellidos;
+                 espacios[i].cedula = cedula;                // Asignacion de datos en el arreglo Usuarios.
+                 espacios[i].numCelular = numCelular;
+                 espacios[i].correoElectronico = correoElectronico;
+                 espacios[i].contrasenia = contrasenia;
+                 espacios[i].estados = Estados.Reservado;
+                 JOptionPane.showMessageDialog(null, "Felicidades, usted reservó " + cantTicketes + " Ticketes"  );
+                 i=10;
+             }else{
+                 
+             } 
+           }
+     
+ }
+ public void Reporte(){ // El reporte se encarga de mostrar los usuarios que compraron o reservaron ticketes
+    String mensaje = "";
+     for (int i = 0; i < 10; i++){
+        if(espacios[i].estados == Estados.Disponible){
+            mensaje = mensaje + " _ ";
+        }else if (espacios[i].estados == Estados.Vendido){
+            mensaje = mensaje + " V ";
+        }else{
+          mensaje = mensaje + " R ";  
+        }
+    } 
+     JOptionPane.showMessageDialog(null,"V = Vendido \n R = Reservado " + " \n " + mensaje);
+     
+ } 
  
  
 }
