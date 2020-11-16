@@ -1,16 +1,15 @@
 
-import javax.swing.JOptionPane;
-
-
 public class Usuario {
 
     
-    private String nombre;
-    private String apellidos;
-    private String cedula;
-    private String correoElectronico;
-    private String contrasenia;
-    private String numCelular;
+    public String nombre;
+    public String apellidos;
+    public String cedula;
+    public String correoElectronico;
+    public String contrasenia;
+    public String numCelular;
+     public Estados estados;
+     public int cantTicketes;
     
     public Usuario() {
         nombre = "";
@@ -19,6 +18,7 @@ public class Usuario {
         correoElectronico = "";
         contrasenia = "";
         numCelular = "";
+        estados = estados.Disponible;
           
     }
 }
