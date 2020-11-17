@@ -15,7 +15,9 @@ public class ParquesNacionales {
      
      int ope;
         do{
-            ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir \n 1- Parques Nacional Manuel Antonio \n 2- Parque Nacional Corcovado \n 3- Parque Nacional Tortuguero \n 4- Parque Nacional Cahuita \n 5- Reporte \n 0- Salir" ));
+            ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir \n 1- Parques Nacional Manuel Antonio \n 2- Parque Nacional Corcovado \n 3- Parque Nacional Tortuguero \n 4- Parque Nacional Cahuita \n 5- Devolver Tickete \n 6- Reporte"
+                    + ""
+                    + " \n 0- Salir" ));
          int Seleccion;   
         switch(ope){
             case 1:
@@ -83,7 +85,14 @@ public class ParquesNacionales {
                     }
                     
                 }while(Seleccion != 0);
+              break;
             case 5:
+                
+                Devolver();
+                
+                break;
+            
+            case 6:
                 Reporte();
                 break;
         }
@@ -140,13 +149,28 @@ public class ParquesNacionales {
                  espacios[i].contrasenia = contrasenia;
                  espacios[i].estados = Estados.Reservado;
                  JOptionPane.showMessageDialog(null, "Felicidades, usted reservó " + cantTicketes + " Ticketes"  );
-                 i=10;
+                 break;
              }else{
                  
              } 
            }
      
  }
+ 
+ public void Devolver(){
+String prueba = JOptionPane.showInputDialog("Digite su cedula para devolver el tickete");
+     for (int i = 0; i < 10; i++){
+        if (espacios[i].cedula.equals(prueba)){
+         espacios[i].estados = Estados.Disponible;
+         JOptionPane.showMessageDialog(null, "Delvolvio el tickete comprado");
+         break;
+        }else{
+            JOptionPane.showMessageDialog(null, "Aun no ha comprado o reservado ningun tickete");
+            break;
+        }
+    } 
+ }
+ 
  public void Reporte(){ // El reporte se encarga de mostrar los usuarios que compraron o reservaron ticketes
     String mensaje = "";
      for (int i = 0; i < 10; i++){
@@ -158,7 +182,7 @@ public class ParquesNacionales {
           mensaje = mensaje + " R ";  
         }
     } 
-     JOptionPane.showMessageDialog(null,"V = Vendido \n R = Reservado " + " \n " + mensaje);
+     JOptionPane.showMessageDialog(null,"Reporte de ventas y/o reservas del dia: \n V = Vendido \n R = Reservado " + " \n " + mensaje);
      
  } 
  
