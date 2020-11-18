@@ -3,8 +3,10 @@ import javax.swing.JOptionPane;
 
 
 public class ParquesNacionales {
- Usuario espacios[] = new Usuario[10];
  
+     
+    Usuario espacios[] = new Usuario[10];
+   
  public ParquesNacionales (){ // Se inicializa el arreglos con los datos y gracias a la clase estados, se ponen todos en disponible
    for (int i = 0; i < 10; i++){
        espacios[i] = new Usuario();
@@ -74,7 +76,7 @@ public class ParquesNacionales {
             case 4:
                 
               do{
-                  Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Cahuita es de 2300 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0trthtr"));
+                  Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Cahuita es de 2300 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0"));
                     switch(Seleccion){
                         case 1:
                           Comprar();
