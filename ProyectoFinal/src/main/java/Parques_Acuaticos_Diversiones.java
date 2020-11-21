@@ -13,7 +13,7 @@ public class Parques_Acuaticos_Diversiones {
    for (int i = 0; i < 10; i++){
        espacios[i] = new Usuario();
    }   
- }// Fin Constructor ParquesNacionales
+ }// Fin Constructor acuaticos_Diversiones
  
  public void Menu(){
      
