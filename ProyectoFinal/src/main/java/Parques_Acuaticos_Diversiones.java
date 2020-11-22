@@ -33,7 +33,8 @@ public class Parques_Acuaticos_Diversiones {
             case 1:
                 int seleccion;
                 do{
-                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque Acuático Villa Fantasía es de 8000 colones por persona "
+                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque Acuático Villa Fantasía es de"
+                            + " 8000 colones por persona "
                             + "si desea comprarlo digite: "
                             + "\n 1 "
                             + "\n Si desea reservarlo digite \n 2 "
