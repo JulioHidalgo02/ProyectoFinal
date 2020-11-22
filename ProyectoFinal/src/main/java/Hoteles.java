@@ -6,7 +6,7 @@ public class Hoteles {
    for (int i = 0; i < 10; i++){
        espacios[i] = new Usuario();
    }   
- }// Fin Constructor ParquesNacionales
+ }// Fin Constructor Hoteles
  
  public void Menu(){
      
