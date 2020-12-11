@@ -160,10 +160,10 @@ String prueba = JOptionPane.showInputDialog("Digite su cedula para devolver el t
         if (espacios[i].cedula.equals(prueba)){
          espacios[i].estados = Estados.Disponible;
          JOptionPane.showMessageDialog(null, "Delvolvio el tickete comprado");
-         break;
-        }else{
+         i = 10;
+        }else if(espacios[i].cedula != prueba){
             JOptionPane.showMessageDialog(null, "Aun no ha comprado o reservado ningun tickete");
-            break;
+            i = 10;
         }
     } 
  }
