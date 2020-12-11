@@ -4,14 +4,14 @@ public class Playas {
       Usuario espacios[] = new Usuario[10];
    
    
- public void Playas(){ // Se inicializa el arreglos con los datos y gracias a la clase estados, se ponen todos en disponible
+ public Playas(){ // Se inicializa el arreglos con los datos y gracias a la clase estados, se ponen todos en disponible
    for (int i = 0; i < 10; i++){
        espacios[i] = new Usuario();
    }   
  }// Fin Constructor ParquesNacionales
  
  public void Menu(){
-     
+        JOptionPane.showMessageDialog(null, "bienvenido al servicio de apartado turistico de Playas "  );
      int ope;
         do{
             ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir "
@@ -26,7 +26,7 @@ public class Playas {
          int Seleccion;   
         switch(ope){
             case 1:
-                int seleccion;
+               
                 do{
                     Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket a Playa Samara en Guanacaste es de 8000 colones ida y vuelta por persona "
                             + "si desea comprarlo digite: "
@@ -183,10 +183,11 @@ String prueba = JOptionPane.showInputDialog("Digite su cedula para devolver el t
         if (espacios[i].cedula.equals(prueba)){
          espacios[i].estados = Estados.Disponible;
          JOptionPane.showMessageDialog(null, "Delvolvio el tickete comprado");
-         break;
-        }else{
+        i=10;
+        }else if(espacios[i].cedula != prueba){
             JOptionPane.showMessageDialog(null, "Aun no ha comprado o reservado ningun tickete");
-            break;
+            i=10;
+            
         }
     } 
  }
