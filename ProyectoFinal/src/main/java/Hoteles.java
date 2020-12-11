@@ -9,7 +9,7 @@ public class Hoteles {
  }// Fin Constructor Hoteles
  
  public void Menu(){
-     
+        JOptionPane.showMessageDialog(null, "bienvenido al servicio de apartado turistico de Hoteles "  );
      int ope;
         do{
             ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir \n 1- Hotel Barcelo Tambor \n 2- Hotel Villas Nacazcol \n 3- Hotel Occidental Tamarindo \n 4- Hotel RIU \n 5- Devolver Tickete \n 6- Reporte"
@@ -160,10 +160,10 @@ String prueba = JOptionPane.showInputDialog("Digite su cedula para devolver el t
         if (espacios[i].cedula.equals(prueba)){
          espacios[i].estados = Estados.Disponible;
          JOptionPane.showMessageDialog(null, "Delvolvio el tickete comprado");
-         break;
-        }else{
+         i = 10;
+        }else if(espacios[i].cedula != prueba){
             JOptionPane.showMessageDialog(null, "Aun no ha comprado o reservado ningun tickete");
-            break;
+           i=10;
         }
     } 
  }
