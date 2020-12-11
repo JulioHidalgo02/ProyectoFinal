@@ -9,36 +9,23 @@ public class Parques_Acuaticos_Diversiones {
     Usuario espacios[] = new Usuario[10];
    
    
- public void acuaticos_Diversiones(){ // Se inicializa el arreglos con los datos y gracias a la clase estados, se ponen todos en disponible
+ public Parques_Acuaticos_Diversiones(){ // Se inicializa el arreglos con los datos y gracias a la clase estados, se ponen todos en disponible
    for (int i = 0; i < 10; i++){
        espacios[i] = new Usuario();
    }   
  }// Fin Constructor acuaticos_Diversiones
  
  public void Menu(){
-     
+        JOptionPane.showMessageDialog(null, "bienvenido al servicio de apartado turistico de Parques Acuaticos y de Diversiones "  );
      int ope;
         do{
-            ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir "
-                    + "\n 1- Parque Acuático Villa Fantasía"
-                    + " \n 2- Parque Acuático El Valle Encantado"
-                    + " \n 3- Parque de Diversiones "
-                    + "\n 4-  Kalambu Hot Springs"
-                    + " \n 5- Devolver Tickete "
-                    + "\n 6- Reporte"
-                    + ""
-                    + " \n 0- Salir" ));
+            ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir \n 1- Parque Acuático Villa Fantasía \n 2- Parque Acuático El Valle Encantado \n 3- Parque de Diversiones \n 4-  Kalambu Hot Springs \n 5- Devolver Tickete  \n 6- Reporte \n 0- Salir" ));
          int Seleccion;   
         switch(ope){
             case 1:
-                int seleccion;
+                
                 do{
-                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque Acuático Villa Fantasía es de"
-                            + " 8000 colones por persona "
-                            + "si desea comprarlo digite: "
-                            + "\n 1 "
-                            + "\n Si desea reservarlo digite \n 2 "
-                            + "\n Para salir digite 0 "));
+                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque Acuático Villa Fantasía es de 8000 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0 "));
                     switch(Seleccion){
                         case 1:
                           Comprar();
@@ -55,10 +42,7 @@ public class Parques_Acuaticos_Diversiones {
             case 2:
                 
                do{
-                   Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del ticket al Parque Acuático El Valle Encantado"
-                           + " es de 4000 colones por persona si desea comprarlo digite: \n 1"
-                           + " \n Si desea reservarlo digite "
-                           + "\n 2 \n Para salir digite 0"));
+                   Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del ticket al Parque Acuático El Valle Encantado es de 4000 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0"));
                     switch(Seleccion){
                         case 1:
                           Comprar();
@@ -75,11 +59,7 @@ public class Parques_Acuaticos_Diversiones {
             case 3:
                 
                 do{
-                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque de Diversiones es de "
-                            + "7000 colones por persona si desea comprarlo digite: "
-                            + "\n 1 "
-                            + "\n Si desea reservarlo digite "
-                            + "\n 2 \n Para salir digite 0"));
+                    Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque de Diversiones es de 7000 colones por persona si desea comprarlo digite: \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0"));
                     switch(Seleccion){
                         
                         case 1:
@@ -96,11 +76,7 @@ public class Parques_Acuaticos_Diversiones {
             case 4:
                 
               do{
-                  Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque Acuático Kalumbu Hot Springs"
-                          + " es de 6000 colones por persona si desea comprarlo digite: "
-                          + "\n 1 "
-                          + "\n Si desea reservarlo digite "
-                          + "\n 2 \n Para salir digite 0"));
+                  Seleccion = Integer.parseInt(JOptionPane.showInputDialog("El precio del Ticket al Parque Acuático Kalumbu Hot Springs es de 6000 colones por persona si desea comprarlo digite:  \n 1 \n Si desea reservarlo digite \n 2 \n Para salir digite 0"));
                     switch(Seleccion){
                         case 1:
                           Comprar();
@@ -189,10 +165,10 @@ String prueba = JOptionPane.showInputDialog("Digite su cedula para devolver el t
         if (espacios[i].cedula.equals(prueba)){
          espacios[i].estados = Estados.Disponible;
          JOptionPane.showMessageDialog(null, "Delvolvio el tickete comprado");
-         break;
-        }else{
+         i = 10;
+        }else if(espacios[i].cedula != prueba){
             JOptionPane.showMessageDialog(null, "Aun no ha comprado o reservado ningun tickete");
-            break;
+            i = 10;
         }
     } 
  }
