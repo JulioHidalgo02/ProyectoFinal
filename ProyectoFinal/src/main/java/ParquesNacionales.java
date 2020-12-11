@@ -14,7 +14,7 @@ public class ParquesNacionales {
  }// Fin Constructor ParquesNacionales
  
  public void Menu(){
-     
+        JOptionPane.showMessageDialog(null, "bienvenido al servicio de apartado turistico de Parques Nacionales "  );
      int ope;
         do{
             ope = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción que desea elegir \n 1- Parques Nacional Manuel Antonio \n 2- Parque Nacional Corcovado \n 3- Parque Nacional Tortuguero \n 4- Parque Nacional Cahuita \n 5- Devolver Tickete \n 6- Reporte"
@@ -162,13 +162,13 @@ public class ParquesNacionales {
  public void Devolver(){
 String prueba = JOptionPane.showInputDialog("Digite su cedula para devolver el tickete");
      for (int i = 0; i < 10; i++){
-        if (espacios[i].cedula.equals(prueba)){
+        if (espacios[i].cedula.equals(prueba)){//Si prueba es igual a el espacio en el arreglo espacios[i].cedula, devuelva el tickete.
          espacios[i].estados = Estados.Disponible;
          JOptionPane.showMessageDialog(null, "Delvolvio el tickete comprado");
-         break;
-        }else{
+         i = 10;
+        }else if(espacios[i].cedula != prueba){
             JOptionPane.showMessageDialog(null, "Aun no ha comprado o reservado ningun tickete");
-            break;
+            i = 10;
         }
     } 
  }
